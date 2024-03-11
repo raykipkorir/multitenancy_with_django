@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>{{tenant|title}} Projects</h3>
+    <div>
+        <ul>
+            {% for project in projects %}
+            <li>{{project.name}}</li>
+            {% endfor %} 
+        </ul>
+        
+    </div>
+    
+</body>
+</html>
